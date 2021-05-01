@@ -14,20 +14,20 @@ npm install
 
 ```bash
 Project/
-		├── dist/ 
-				// コンパイル時に出力
-				├── images/
-				├── bundle.js
+    ├── dist/ 
+        // コンパイル時に出力
+        ├── images/
+        ├── bundle.js
         ├── common.css
         └── main.js //--mode=production (babel file)
 
     ├── src/
-    		├── images/
+        ├── images/
         ├── js/
-        		└── main.js
-        ├── sass/
-        		└── main.scss
-        └── index.js // entry point
+        └── main.js
+    ├── sass/
+        └── main.scss
+    └── index.js // entry point
  
     ├── index.html
     ├── package-lock.json
