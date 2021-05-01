@@ -1,6 +1,6 @@
-//path モジュールの読み込み
+// path モジュールの読み込み
 const path = require('path');
-//MiniCssExtractPlugin の読み込み
+// MiniCssExtractPlugin の読み込み
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // CleanWebpackPlugin の読み込み
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -11,9 +11,9 @@ const enabledSourceMap =  MODE !== 'production';
 
 module.exports = {
 	mode: MODE,
-  //エントリポイント（デフォルトと同じなので省略可）
+  // エントリポイント（デフォルトと同じなので省略可）
   entry: './src/index.js',  
-  //出力先（デフォルトと同じなので省略可）
+  // 出力先（デフォルトと同じなので省略可）
   output: { 
     path: path.resolve(__dirname, 'dist'),
     publicPath: '',
@@ -49,9 +49,9 @@ module.exports = {
                 plugins: [
                   // ベンダープレフィックスを自動付与
                   'autoprefixer',
-                  //CSS Declaration Sorter （アルファベット順でソート）
+                  // CSS Declaration Sorter （アルファベット順でソート）
                   ['css-declaration-sorter', { order: 'alphabetical' }],
-                  //PostCSS Sort Media Queries（mobile-first でソート）
+                  // PostCSS Sort Media Queries（mobile-first でソート）
                   ['postcss-sort-media-queries', { sort: 'mobile-firstl' }],
                 ],
               },
@@ -79,7 +79,7 @@ module.exports = {
         test: /\.(gif|png|jpe?g|svg|eot|wof|woff|ttf)$/i,
         use: [
           {
-            //画像を出力フォルダーにコピーするローダー
+            // 画像を出力フォルダーにコピーするローダー
             loader: 'file-loader',
             options: {
               // 画像ファイルの名前とパスの設定
@@ -90,7 +90,7 @@ module.exports = {
       },
     ],
   },
-  //プラグインの設定
+  // プラグインの設定
   plugins: [
     // CleanWebpackPlugin を追加
     new CleanWebpackPlugin({
@@ -101,20 +101,20 @@ module.exports = {
       filename: "common.css",
     }),
   ],
-  //source-map タイプのソースマップを出力
+  // source-map タイプのソースマップを出力
   devtool: "source-map",
   // node_modules を監視（watch）対象から除外
   watchOptions: {
-    ignored: /node_modules/  //正規表現で指定
+    ignored: /node_modules/  // 正規表現で指定
   },
   devServer: {
-    //ルートディレクトリの指定
+    // ルートディレクトリの指定
     contentBase: path.join(__dirname, ''),
-    //サーバー起動時にブラウザを自動的に起動
+    // サーバー起動時にブラウザを自動的に起動
     open: true,
     // ルートディレクトリのファイルを監視（変更があると自動的にリロードされる）
     watchContentBase: true,
-    //バンドルされたファイルを出力する（実際に書き出す）
+    // バンドルされたファイルを出力する（実際に書き出す）
     writeToDisk: true
   },
 };
