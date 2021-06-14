@@ -1,4 +1,5 @@
 # Front-End Setup
+Webpack setting for frontend mockup development (HTML/SCSS/JS)
 
 
 
